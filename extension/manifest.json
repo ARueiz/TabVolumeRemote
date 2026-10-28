@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "TabVolumeRemote",
+  "version": "0.5.0",
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "minimum_chrome_version": "120",
+  "permissions": ["storage", "alarms", "webNavigation"],
+  "optional_host_permissions": ["http://*/*"],
+  "description": "控制指定 YouTube、Twitch、Hami Video 分頁的 HTML 媒體音量與靜音。",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://www.youtube.com/*", "https://www.twitch.tv/*", "https://hamivideo.hinet.net/*"],
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*", "https://www.twitch.tv/*", "https://hamivideo.hinet.net/*"],
+    "js": ["sites.js", "content.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }]
+}

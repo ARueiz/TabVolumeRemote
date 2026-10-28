@@ -1,0 +1,26 @@
+:root { color-scheme: light dark; font: 16px/1.6 system-ui, sans-serif; background: #101923; color: #edf3fa; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100%, 520px); margin: auto; padding: 24px 16px 40px; }
+h1 { font-size: clamp(24px, 6vw, 32px); margin: 0 0 24px; overflow-wrap: anywhere; }
+h2 { font-size: 18px; margin: 0 0 16px; }
+p { margin: 8px 0; }
+.eyebrow { color: #8fcee5; font-size: 14px; }
+.card { background: #1b2938; border: 1px solid #34485d; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.connection, .volume-label { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+label { display: block; margin: 12px 0 8px; }
+input, select, button { font: inherit; min-height: 48px; border: 1px solid #6e879e; border-radius: 8px; }
+input[type="password"], select { width: 100%; padding: 10px; background: #101923; color: #edf3fa; }
+button { padding: 8px 16px; background: #293c50; color: #edf3fa; cursor: pointer; }
+.primary { width: 100%; background: #b9e9fa; color: #112735; font-weight: 700; margin-top: 12px; }
+button:disabled, input:disabled, select:disabled { opacity: .5; cursor: not-allowed; }
+input[type="range"] { width: 100%; margin: 8px 0 16px; accent-color: #b9e9fa; }
+output { font-size: 26px; }
+.hint, footer { color: #b2c3d4; font-size: 14px; }
+#message { min-height: 28px; overflow-wrap: anywhere; }
+.selected { white-space: pre-line; overflow-wrap: anywhere; font-size: 14px; }
+#message[data-error="true"] { color: #ffb3bc; }
+footer { margin-top: 24px; }
+:focus-visible { outline: 3px solid #8fcee5; outline-offset: 3px; }
+[hidden] { display: none !important; }
+@media (max-width: 360px) { .card { padding: 16px; } main { padding-inline: 12px; } }

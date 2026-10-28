@@ -1,0 +1,18 @@
+:root { color-scheme: light dark; font: 14px/1.5 system-ui, sans-serif; }
+body { margin: 0; width: 370px; }
+main { padding: 20px; }
+h1 { font-size: 21px; margin: 0; }
+label { font-weight: 600; }
+.hint { color: light-dark(#555, #bbb); font-size: 12px; }
+.tab-controls { display: flex; gap: 8px; margin-top: 8px; }
+select { flex: 1; min-width: 0; }
+select, button { font: inherit; padding: 8px; border: 1px solid #888; border-radius: 6px; }
+button { cursor: pointer; }
+.selected { overflow-wrap: anywhere; max-height: 110px; overflow-y: auto; white-space: pre-line; }
+.volume-label { display: flex; justify-content: space-between; align-items: center; }
+output { font-size: 22px; font-weight: 600; }
+input[type="range"] { width: 100%; min-height: 40px; margin: 8px 0; accent-color: #d33; }
+#status { min-height: 42px; }
+#status[data-error="true"] { color: light-dark(#b00020, #ff9eaa); }
+:focus-visible { outline: 3px solid #4c9ffe; outline-offset: 2px; }
+#open-settings { margin-top: 8px; }

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TabVolumeRemote 連線設定</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="server-client.js" defer></script>
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>TabVolumeRemote 連線設定</h1>
+    <p>Extension ID：<strong id="extension-id"></strong></p>
+    <p>請將此 ID 填入電腦 Server 的 .env。擴充功能不會讀取電腦上的 .env。</p>
+    <form id="connection-form">
+      <label for="server-url">Server 位址</label>
+      <input id="server-url" type="url" required placeholder="http://192.168.1.10:3210" autocomplete="off">
+      <label for="server-token">擴充功能專用 Token</label>
+      <input id="server-token" type="password" maxlength="43" autocomplete="off" spellcheck="false" autocapitalize="none">
+      <p id="token-hint">第一次設定請填入 Token。</p>
+      <div class="actions">
+        <button id="test-server" type="button">測試連線</button>
+        <button id="save-server" type="submit">儲存並連線</button>
+        <button id="disconnect-server" type="button">中斷連線</button>
+        <button id="forget-server" type="button">清除設定</button>
+      </div>
+    </form>
+    <p id="action-status" role="status" aria-live="polite"></p>
+    <p id="connection-status" role="status"></p>
+    <p id="compatibility"></p>
+    <p>設定儲存在本機瀏覽器，不透過帳號同步。重新啟動後會自動連線；中斷連線會保留設定，清除設定才會移除 Token。純 HTTP 不加密，只適用可信任內網。</p>
+  </main>
+</body>
+</html>

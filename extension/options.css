@@ -1,0 +1,11 @@
+:root { color-scheme: light dark; font: 16px/1.6 system-ui, sans-serif; }
+body { margin: 0; }
+main { max-width: 660px; padding: 24px; margin: auto; }
+h1 { font-size: 25px; }
+label { display: block; font-weight: 600; margin-top: 16px; }
+input { box-sizing: border-box; width: 100%; padding: 10px; font: inherit; }
+button { padding: 10px 14px; font: inherit; cursor: pointer; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+#extension-id { overflow-wrap: anywhere; }
+#action-status[data-error="true"] { color: light-dark(#b00020, #ff9eaa); }
+:focus-visible { outline: 3px solid #4c9ffe; outline-offset: 2px; }

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>TabVolumeRemote</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/volume-sender.js" defer></script>
+  <script src="/controls.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">區域網路音量控制</p><h1>TabVolumeRemote</h1></header>
+    <section class="card" aria-label="連線狀態">
+      <div class="connection"><span id="connection" role="status" aria-live="polite">正在連線…</span><button id="refresh" type="button">重新連線</button></div>
+      <p id="browser-status">尚未連接瀏覽器</p>
+      <p class="hint">請在電腦的擴充功能中設定並連接此 Server。</p>
+    </section>
+    <section class="card">
+      <form id="pair-form">
+        <h2>配對這支手機</h2>
+        <label for="token">配對 Token</label>
+        <input id="token" type="password" required maxlength="128" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="pair-hint">
+        <p id="pair-hint" class="hint">輸入電腦上設定的 Token。只在可信任的私人網路使用。</p>
+        <button id="pair" class="primary" type="submit">配對</button>
+      </form>
+      <button id="logout" type="button" hidden>解除這支手機的配對</button>
+    </section>
+    <section class="card" aria-labelledby="controls-heading">
+      <h2 id="controls-heading">分頁控制</h2>
+      <label for="tabs">目標分頁</label>
+      <select id="tabs" disabled><option value="">尚未連接瀏覽器</option></select>
+      <p id="selected" class="selected">尚未選取分頁</p>
+      <div class="volume-label"><label for="volume">音量</label><output id="percentage" for="volume">—</output></div>
+      <input id="volume" type="range" min="0" max="100" value="0" disabled aria-describedby="control-hint">
+      <button id="mute" type="button" disabled>靜音</button>
+      <p id="control-hint" class="hint">瀏覽器連接後才能選取分頁、調整音量或靜音。</p>
+      <p id="latency" class="hint" aria-live="polite"></p>
+    </section>
+    <p id="message" role="status" aria-live="polite"></p>
+    <footer>純 HTTP 不加密；請勿在公共 Wi-Fi 使用，也不要設定路由器連接埠轉送。</footer>
+  </main>
+</body>
+</html>
